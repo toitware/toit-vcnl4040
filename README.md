@@ -1,6 +1,6 @@
 # VCNL4040
 
-Low level driver for the VCNL4040 sensor.
+A low level driver for the VCNL4040 sensor.
 
 This sensor combines proximity features with ambient light sensor features. It
 is connected with I2C. The use of the interrupt-related features is untested

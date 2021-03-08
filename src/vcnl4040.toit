@@ -1,8 +1,9 @@
 // Copyright (C) 2021 Toitware ApS. All rights reserved.
-// See the LICENSE file in the package directory.
+// Use of this source code is governed by a BSD-style license that can be found
+// in the LICENSE file.
 
 /**
-Low level driver for the VCNL4040 sensor.
+A low level driver for the VCNL4040 sensor.
 
 This sensor combines proximity features with ambient light sensor features. It
   is connected with I2C. The use of the interrupt-related features is untested
