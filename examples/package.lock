@@ -1,0 +1,5 @@
+prefixes:
+  vcnl4040: ..
+packages:
+  ..:
+    path: ..
