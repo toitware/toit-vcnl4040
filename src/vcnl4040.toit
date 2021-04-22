@@ -20,7 +20,7 @@ class Vcnl4040:
   static I2C_ADDRESS ::= 0x60
   static DEVICE_ID ::= 0x186
 
-  registers_/serial.Registers ::= ?
+  registers_ /serial.Registers ::= ?
 
   // TODO: When we have moved to the SDK that supports it, this should just
   // call registers_.read_u16_le.
@@ -48,7 +48,7 @@ class Vcnl4040:
   set_als_integration_time ms -> none:
     // An appropriate exception will be thrown by write_masked_ if this
     // index_of returns -1.
-    value/int := ALS_IT_VALUES_.index_of ms
+    value /int := ALS_IT_VALUES_.index_of ms
     write_masked_ ALS_CONF_ ALS_IT_MASK_ value << ALS_IT_SHIFT_
 
   read_als_persistence -> int:
@@ -60,7 +60,7 @@ class Vcnl4040:
   Valid numbers of required hits are 1, 2, 4, or 8.
   */
   set_als_persistence hits -> none:
-    value/int := ALS_PERS_VALUES_.index_of hits
+    value /int := ALS_PERS_VALUES_.index_of hits
     write_masked_ ALS_CONF_ ALS_PERS_MASK_ value << ALS_PERS_SHIFT_
 
   read_als_interrupt_enable -> bool:
@@ -121,7 +121,7 @@ class Vcnl4040:
     1/160, or 1/320.
   */
   set_ps_duty_cycle ratio/int -> none:
-    value/int := PS_DUTY_VALUES_.index_of ratio
+    value /int := PS_DUTY_VALUES_.index_of ratio
     write_masked_ PS_CONF_1_2_ PS_DUTY_MASK_ value << PS_DUTY_SHIFT_
 
   read_ps_persistence -> int:
@@ -270,7 +270,7 @@ class Vcnl4040:
   Valid values in mA are 50, 75, 100, 120, 140, 160, 180, and 200.
   */
   set_ps_led_current milli_amps -> none:
-    value/int := PS_LED_I_VALUES_.index_of milli_amps
+    value /int := PS_LED_I_VALUES_.index_of milli_amps
     write_masked_ PS_CONF_3_MS_ PS_LED_I_MASK_ value << PS_LED_I_SHIFT_
 
   read_ps_cancellation_level -> int:
@@ -325,7 +325,7 @@ class Vcnl4040:
   reset_interrupt -> none:
     last_reasons_ = read_u16_le_ INT_FLAG_
 
-  last_reasons_/int := 0
+  last_reasons_ /int := 0
 
   /**
   Returns whether the last interrupt was caused by the proximity sensor
