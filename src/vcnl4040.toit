@@ -297,7 +297,7 @@ class Vcnl4040:
     return read_u16_le_ PS_THDL_
 
   /**
-  Setslow threshold for proximity sensor.
+  Sets low threshold for proximity sensor.
   The $threshold is a value from 0-65535.
   */
   write_ps_low_interrupt_threshold threshold/int -> none:
