@@ -1,5 +1,5 @@
 // Copyright (C) 2021 Toitware ApS. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be found
+// Use of this source code is governed by an MIT-style license that can be found
 // in the LICENSE file.
 
 /**
@@ -8,7 +8,7 @@ A simple example of how to use the VCNL4040 driver.
 
 import gpio
 import serial.protocols.i2c as i2c
-import drivers.vcnl4040 show Vcnl4040
+import vcnl4040 show Vcnl4040
 
 main:
   bus := i2c.Bus
