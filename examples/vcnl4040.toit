@@ -7,7 +7,7 @@ A simple example of how to use the VCNL4040 driver.
 */
 
 import gpio
-import serial.protocols.i2c as i2c
+import i2c
 import vcnl4040 show Vcnl4040
 
 main:
