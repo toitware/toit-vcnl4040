@@ -14,7 +14,7 @@ A simple usage example.
 
 ``` toit
 import gpio
-import serial.protocols.i2c as i2c
+import i2c
 import vcnl4040 show Vcnl4040
 
 main:
@@ -27,8 +27,7 @@ main:
 
   sensor := Vcnl4040 device
 
-  print
-    "Sensor id is $(%04x sensor.get_id)"  // Should print 0x0186.
+  print "Sensor id is $(%04x sensor.get_id)"  // Should print 0x0186.
 
   sensor.set_ps_led_current 200         // Max is 200mA.
   sensor.set_ps_duty_cycle 40           // Max infrared duty cycle is 1/40.
