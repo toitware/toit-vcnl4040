@@ -14,7 +14,7 @@ Documentation is available at
 */
 
 import serial
-import binary
+import io
 
 class Vcnl4040:
   static I2C_ADDRESS ::= 0x60
@@ -26,13 +26,13 @@ class Vcnl4040:
   // call registers_.read_u16_le.
   read_u16_le_ reg/int -> int:
     ba := registers_.read_bytes reg 2
-    return binary.LITTLE_ENDIAN.uint16 ba 0
+    return io.LITTLE_ENDIAN.uint16 ba 0
 
   // TODO: When we have moved to the SDK that supports it, this should just
   // call registers_.write_u16_le.
   write_u16_le_ reg/int value/int -> none:
     ba := ByteArray 2
-    binary.LITTLE_ENDIAN.put_uint16 ba 0 value
+    io.LITTLE_ENDIAN.put_uint16 ba 0 value
     registers_.write_bytes reg ba
 
   constructor device/serial.Device:
