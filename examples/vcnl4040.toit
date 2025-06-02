@@ -16,24 +16,24 @@ main:
     --scl=gpio.Pin 22
     --frequency=1000
   
-  device := bus.device Vcnl4040.I2C_ADDRESS
+  device := bus.device Vcnl4040.I2C-ADDRESS
   
   sensor := Vcnl4040 device
 
-  id := sensor.get_id
+  id := sensor.get-id
 
-  if id != Vcnl4040.DEVICE_ID:
+  if id != Vcnl4040.DEVICE-ID:
     throw "Id was 0x$(%x id). Wrong device attached to I2C bus?"
 
-  sensor.set_ps_led_current 200         // Max is 200mA.
-  sensor.set_ps_duty_cycle 40           // Max infrared duty cycle is 1/40.
-  sensor.set_ps_integration_time Vcnl4040.PS_IT_8T  // Max integration time.
-  sensor.set_ps_resolution 16           // 16 bit output.
-  sensor.set_ps_smart_persistence true  // Enable smart persistence.
-  sensor.set_ps_power true              // Power on.
+  sensor.set-ps-led-current 200         // Max is 200mA.
+  sensor.set-ps-duty-cycle 40           // Max infrared duty cycle is 1/40.
+  sensor.set-ps-integration-time Vcnl4040.PS-IT-8T  // Max integration time.
+  sensor.set-ps-resolution 16           // 16 bit output.
+  sensor.set-ps-smart-persistence true  // Enable smart persistence.
+  sensor.set-ps-power true              // Power on.
   // sensor.set_als_integration_time 80 // Short integration time.
   // sensor.set_als_power true          // Power on the ambient light sensor.
   
   while true:
-    print "$sensor.read_ps_data"
+    print "$sensor.read-ps-data"
     sleep --ms=250
