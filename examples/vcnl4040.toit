@@ -6,14 +6,13 @@
 A simple example of how to use the VCNL4040 driver.
 */
 
-import gpio
 import i2c
 import vcnl4040 show Vcnl4040
 
 main:
   bus := i2c.Bus
-    --sda=gpio.Pin 21
-    --scl=gpio.Pin 22
+    --sda=21
+    --scl=22
     --frequency=1000
   
   device := bus.device Vcnl4040.I2C-ADDRESS
